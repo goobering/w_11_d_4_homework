@@ -7,6 +7,7 @@ describe('Hero', function(){
     var hero;
     var testFood, testFavouriteFood;
     var testTask1, testTask2, testTask3;
+    let questSortOptions = {urgency: 'urgency', difficulty: 'difficulty', reward: 'reward'};
 
     beforeEach(function(){
         hero = new Hero('testHero1', 'testFavouriteFood1');
@@ -53,17 +54,17 @@ describe('Hero', function(){
     });
 
     it('can sort quests by urgency', function(){
-        hero.sortQuestsBy('urgency');
+        hero.sortQuestsBy(questSortOptions.urgency);
         assert.deepEqual(hero.tasks, [testTask1, testTask2, testTask3]);
     });
 
     it('can sort quests by difficulty', function(){
-        hero.sortQuestsBy('difficulty');
+        hero.sortQuestsBy(questSortOptions.difficulty);
         assert.deepEqual(hero.tasks, [testTask1, testTask2, testTask3]);
     })
 
     it('can sort quests by reward', function(){
-        hero.sortQuestsBy('reward');
+        hero.sortQuestsBy(questSortOptions.reward);
         assert.deepEqual(hero.tasks, [testTask1, testTask2, testTask3]);
     })
 
